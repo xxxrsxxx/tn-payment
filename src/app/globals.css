@@ -1,26 +1,494 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --theme-blue50: #ebf3ff;
+  --theme-blue50-hover: white;
+  --theme-blue50-active: white;
+  --theme-blue100: #cce1ff;
+  --theme-blue100-hover: #e6f0ff;
+  --theme-blue100-active: white;
+  --theme-blue200: #99c3ff;
+  --theme-blue200-hover: #b3d2ff;
+  --theme-blue200-active: white;
+  --theme-blue300: #66a5ff;
+  --theme-blue300-hover: #80b4ff;
+  --theme-blue300-active: white;
+  --theme-blue400: #519cff;
+  --theme-blue400-hover: #6babff;
+  --theme-blue400-active: #eaf3ff;
+  --theme-blue500: #3084f2;
+  --theme-blue500-hover: #4892f4;
+  --theme-blue500-active: #c0dafb;
+  --theme-blue600: #2c72db;
+  --theme-blue600-hover: #4281df;
+  --theme-blue600-active: #afc9f1;
+  --theme-blue700: #215bb8;
+  --theme-blue700-hover: #2566ce;
+  --theme-blue700-active: #88aeea;
+  --theme-blue800: #214a8d;
+  --theme-blue800-hover: #2655a2;
+  --theme-blue800-active: #6b96dc;
+  --theme-blue900: #203b65;
+  --theme-blue900-hover: #264678;
+  --theme-blue900-active: #5582c9;
+  --theme-gray50: #f8fafb;
+  --theme-gray50-hover: white;
+  --theme-gray50-active: white;
+  --theme-gray100: #f1f3f5;
+  --theme-gray100-hover: white;
+  --theme-gray100-active: white;
+  --theme-gray200: #e9ecef;
+  --theme-gray200-hover: #f8f9fa;
+  --theme-gray200-active: white;
+  --theme-gray300: #dee2e6;
+  --theme-gray300-hover: #edeff1;
+  --theme-gray300-active: white;
+  --theme-gray400: #bcc4cc;
+  --theme-gray400-hover: #cad1d7;
+  --theme-gray400-active: white;
+  --theme-gray500: #868e96;
+  --theme-gray500-hover: #949ba2;
+  --theme-gray500-active: #d8dbdd;
+  --theme-gray600: #656d75;
+  --theme-gray600-hover: #717a83;
+  --theme-gray600-active: #b4babf;
+  --theme-gray700: #495057;
+  --theme-gray700-hover: #555d65;
+  --theme-gray700-active: #949da5;
+  --theme-gray800: #343a40;
+  --theme-gray800-hover: #3f474e;
+  --theme-gray800-active: #7a8793;
+  --theme-gray900: #212529;
+  --theme-gray900-hover: #2c3237;
+  --theme-gray900-active: #65727e;
+  --theme-primary: #519cff;
+  --theme-primary-hover: #6babff;
+  --theme-primary-active: #eaf3ff;
+  --theme-white: #ffffff;
+  --theme-white-hover: white;
+  --theme-white-active: white;
+  --theme-white-elevated: #ffffff;
+  --theme-white-elevated-hover: white;
+  --theme-white-elevated-active: white;
+  --theme-black: #000000;
+  --theme-black-hover: #0d0d0d;
+  --theme-black-active: #4d4d4d;
+  --theme-danger: #f55f54;
+  --theme-danger-hover: #f6766c;
+  --theme-danger-active: #fde6e5;
+  --theme-warning: #ffbe5b;
+  --theme-warning-hover: #ffc875;
+  --theme-warning-active: #fffbf4;
+  --theme-green: #19bc85;
+  --theme-green-hover: #1cd395;
+  --theme-green-active: #80eec9;
+  --theme-background: #f8fafb;
+  --theme-background-hover: white;
+  --theme-background-active: white;
+  --theme-border-color: rgba(0, 0, 0, 0.1);
+  --theme-border-color-hover: rgba(13, 13, 13, 0.1);
+  --theme-border-color-active: rgba(77, 77, 77, 0.1);
+  --theme-text-light: #ffffff;
+  --theme-text-dark: #212529;
+  --theme-transparent-danger: rgba(245, 95, 84, 0.05);
+  --theme-transparent-green: rgba(25, 188, 133, 0.1);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: var(--background);
+    --foreground: var(--foreground);
   }
 }
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 400;
+}
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Pretendard JP', Arial, Helvetica, sans-serif;
+}
+
+a {
+  cursor: pointer;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox  */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+ul,
+li,
+ol {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+h4 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+h5 {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+p {
+  font-size: 13px;
+  font-weight: 400;
+  margin: 0;
+}
+
+/* define style */
+.tab-header {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+}
+.tab-header h5 {
+  flex: 1;
+  padding-left: 32px;
+  color: var(--theme-gray900);
+  text-align: center;
+  font-size: 17px;
+  font-weight: 700;
+}
+.section-header {
+}
+.section-header header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--theme-gray900);
+}
+.close-button {
+  width: 32px;
+  height: 32px;
+  padding: 0 !important;
+  background-color: var(--theme-gray100) !important;
+}
+
+.section {
+  padding: 20px;
+  background-color: var(--theme-white);
+}
+.section + .section {
+  border-top: 8px solid var(--theme-gray100);
+}
+
+.divider {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/*==============================================*/
+/*==============================================*/
+
+.dim {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+.popup {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  padding: 24px 20px 20px;
+  border-radius: 8px 8px 0 0;
+  background: var(--theme-white-elevated);
+  transform: translateY(100%);
+  color: var(--theme-gray900);
+}
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+@keyframes fadeIn_animate {
+  0% {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.animated.fadeIn {
+  animation-name: fadeIn_animate;
+}
+
+@keyframes fadeInDown_animate {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.animated.fadeInDown {
+  animation-name: fadeInDown_animate;
+}
+
+@keyframes fadeInUp_animate {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.animated.fadeInUp {
+  animation-name: fadeInUp_animate;
+}
+
+/*==============================================*/
+/*=================chargeAmount=================*/
+.charge-amount {
+}
+.charge-amount .charge-options {
+  margin-top: 8px;
+  display: grid;
+  grid-gap: 8px;
+  grid-template-columns: repeat(3, 1fr);
+}
+.charge-amount .charge-options > button {
+  width: 100%;
+  padding: 15px 12px !important;
+  border: 1px solid var(--theme-gray300);
+}
+.desc {
+  display: grid;
+  grid-template-columns: 8px auto;
+  grid-gap: 4px;
+  margin-top: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.15;
+  color: #868e96;
+}
+.plus {
+  color: var(--theme-primary);
+  margin-right: 4px;
+}
+.charge-amount .desc:before {
+  content: '\203b';
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  background: var(--theme-gray50);
+  border: 1px solid var(--theme-border-color);
+  border-radius: 8px;
+  padding: 14px;
+  font-size: 15px;
+  height: 48px;
+  font-weight: 700;
+  background-color: var(--theme-white) !important;
+  margin-top: 8px;
+}
+.charge-amount .input-container > button {
+  width: 20px !important;
+  height: 20px !important;
+  padding: 0 !important;
+  margin: 0;
+  background: none !important;
+  border: 0 !important;
+}
+
+.charge-amount .input-container > h5 {
+  margin-left: 16px;
+}
+
+/*==============================================*/
+/*===============PaymentMethod==================*/
+
+.card-container {
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+  margin: 0 -20px;
+  background-color: var(--theme-gray100);
+  overflow: hidden;
+}
+
+.card-container .card-wrapper {
+  position: relative;
+  flex: 1;
+  overflow-x: hidden;
+}
+.card-container .card-box {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-wrap: unset;
+  scroll-snap-type: x mandatory;
+  gap: 16px;
+  -webkit-overflow-scrolling: touch;
+  transition: 0.5s ease-in-out;
+}
+
+.card-container .card {
+  width: 242px;
+  height: 148px;
+  padding: 16px;
+  flex: 0 0 auto;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: auto;
+  user-select: none;
+  scroll-snap-align: center;
+  cursor: pointer;
+}
+.card-container .card.new {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  color: #212529;
+  font-size: 13px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px #0000001a;
+  background: #f8fafb;
+}
+
+.card.naverpay {
+  background-image: url(https://sbosirdwzbyw9257399.gcdn.ntruss.com/assets/frontend-assets/toonation/donator/assets/images/icon/charge/img_naver_card.png);
+}
+.card.kakaopay {
+  background-image: url(https://sbosirdwzbyw9257399.gcdn.ntruss.com/assets/frontend-assets/toonation/donator/assets/images/icon/charge/img_kakao_card.png);
+}
+.card.tosspay {
+  background-image: url(https://sbosirdwzbyw9257399.gcdn.ntruss.com/assets/frontend-assets/toonation/donator/assets/images/icon/charge/img_toss_card.png);
+}
+.card.culture {
+  background-image: url(https://sbosirdwzbyw9257399.gcdn.ntruss.com/assets/frontend-assets/toonation/donator/assets/images/icon/charge/img_global_culturegift.png?v=2);
+}
+
+.international-method {
+  display: grid;
+  grid-gap: 12px;
+  grid-template-columns: repeat(2, 1fr);
+}
+.international-method button {
+  font-size: 15px;
+  padding: 0;
+  width: 100%;
+  display: block;
+  border: 1px solid var(--theme-gray300);
+  background-color: var(--theme-gray50);
+}
+.international-method button > span {
+  color: var(--theme-gray500);
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.international-method .selected button {
+  border: 2px solid var(--theme-blue400) !important;
+  font-weight: 500;
+  background: var(--theme-blue100);
+}
+.international-method .selected button > span {
+}
+/*==============================================*/
+/*============PaymentMethodBottomSheet=======****/
+
+.payment-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 12px;
+  margin-top: 20px;
+}
+
+.payment-container > li > button {
+  position: relative;
+  width: 100%;
+  min-height: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  overflow: hidden;
+  color: var(--theme-gray600);
+}
+
+.payment-container > .selected button {
+  border: 2px solid var(--theme-blue400) !important;
+  font-weight: 500;
+}
+
+.payment-container * p {
+  font-size: 12px;
+  padding: 0 4px;
+  word-break: keep-all;
+  line-break: loose;
+  white-space: pre-line;
+}
+
+/*==============================================*/
+/*============***ChargeDescription****=======****/
+.description {
+}
+
+.description button {
+  width: 100%;
+}
+.description p {
+  margin-top: 12px;
+  color: #868e96;
+  font-weight: 500;
+  line-height: 1.5;
 }

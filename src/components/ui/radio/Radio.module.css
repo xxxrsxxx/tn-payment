@@ -1,0 +1,35 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  display: flex;
+  margin: 0 !important;
+  padding: 10px 0;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--theme-gray900);
+  justify-content: flex-start;
+}
+.item input {
+  display: none;
+}
+.item > input:checked + .icon {
+  border-color: var(--theme-blue400);
+  border-width: 5px;
+}
+
+.item .icon {
+  flex: 0 0 20px;
+  content: ' ';
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  border: 1px solid var(--theme-gray400);
+  cursor: pointer;
+  margin-right: 8px;
+}
