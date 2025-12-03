@@ -4,7 +4,6 @@ import { ErrorBoundary } from 'react-error-boundary';
 
 import { cookies } from 'next/headers';
 
-import { ChargeTabContainer } from '@/features/charge/components';
 import ChargeFeature from '@/features/charge/components/ChargeFeature';
 import { chargeKeys } from '@/features/charge/queries/useGetChargeResultQuery';
 import { chargeService } from '@/services/charge.service';
